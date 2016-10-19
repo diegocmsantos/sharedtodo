@@ -16,6 +16,8 @@ function setUserInfo(request) {
 
 exports.login = function(req, res, next) {
 
+	console.log("user", req.user);
+
 	var userInfo = setUserInfo(req.user);
 
 	res.status(200).json({
@@ -91,7 +93,7 @@ exports.roleAuthorization = function(roles){
             }
  
             res.status(401).json({error: 'You are not authorized to view this content'});
-            return next('Unauthorized');
+            return next('Unauthorized adf');
  
         });
  
